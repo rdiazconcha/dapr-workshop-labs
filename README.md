@@ -14,4 +14,6 @@ In order to take the most out of this workshop, you should be familiar with .NET
 * .NET 5.0 SDK
 * Postman
 * Azure CLI 2.28 or above
+* Helm 3.6.3 or above
 * An Azure account (You can get a free trial on [azure.com/free](https://azure.com/free))
+* A Docker Hub account (https://hub.docker.com)
