@@ -1,14 +1,6 @@
 # Lab 1 - Setting up the development environment
 
-In this lab, you set up your development environment for use in the rest of the labs of this workshop.
-
-## Requirements
-- Local SQL Server engine (SQL Server, SQL Server Express, etc.) up and running.
-- Windows Terminal or PowerShell
-- Git 2.33 or higher
-- Visual Studio 2019 16.11.2 or higher
-- .NET 5.0 SDK
-
+In this lab, you will set up your development environment for use in the rest of the labs of this workshop.
  
 Duration: 20 minutes
 
