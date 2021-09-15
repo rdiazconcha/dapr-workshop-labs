@@ -78,6 +78,16 @@ Duration: 20 minutes
     `dapr run --app-id patient --app-port 5001 --dapr-http-port 50001 -- dotnet run -p .\DaprHospital.Patient.Api\ --urls http://localhost:5001`
     
     `dapr run --app-id hospital --app-port 5002 --dapr-http-port 50002 -- dotnet run -p .\DaprHospital.Hospital.Api\ --urls http://localhost:5002`
+    
+2. In a fourth tab, execute the following command to run the Dapr dashboard:
+
+    `dapr dashboard`
+    
+3. Navigate to the dashboard by Ctrl-clicking the address in the Windows Terminal, or manually open a browser and navigate to **http://localhost:8080**
+
+4. Inspect the Dapr dashboard UI and its options.
+
+5. Verify that the three microservices' databases were created, by using SQL Server Management Studio or Azure Data Studio.
 
 ## Task 7: Install Tye
 1. Execute the following command:
@@ -89,10 +99,23 @@ Duration: 20 minutes
     `dotnet tool list`
 
 ## Task 8: Run with Tye
+Tye allows you to run a microservices solution easily.  With its Dapr integration, you can quickly run all the microservices and their Dapr sidecars.
+
 1. Execute the following command in the folder where the .sln file is located:
 
     `tye init`
 
-2. Open the `tye.yaml` file with a code editor such as Visual Studio Code or Notepad.  Modify the microservices names and add the dapr extension under the application name.  The following image shows the applied changes:
+2. Open the `tye.yaml` file with a code editor such as Visual Studio Code or Notepad.  Modify the microservices names and add the dapr extension, in the extensions element under the application name.  The following image shows the applied changes:
 
     ![](images/tyeyaml.PNG)
+
+3. Execute the following command:
+
+    `tye run`
+4. You should see something similar to the following image:
+
+    ![](images/tyerun.PNG)
+    
+5. On the top of the output, you should see a "Dashboard running on http://127.0.0.1:2447" message.  You can Ctrl-click on it to open the dashboard in the browser.
+
+6. Inspect the Dapr dashboard
