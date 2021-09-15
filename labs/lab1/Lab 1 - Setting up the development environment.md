@@ -8,7 +8,7 @@ Duration: 20 minutes
 1. Open the Windows Terminal with administrative rights and execute the following command:
 
     ```powershell
-    powershell -Command "iwr -useb https://raw.githubusercontent.com/dapr/cli/master/install/install.p7s1 | iex"
+    powershell -Command "iwr -useb https://raw.githubusercontent.com/dapr/cli/master/install/install.ps1 | iex"
     ```
 
 2. Verify the installation by executing `dapr --version`
