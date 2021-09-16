@@ -1,4 +1,4 @@
-# Lab 3 - Service to Service communication
+# Lab 3 - Service-to-service invocation
 
 In this lab, you will use the Service invocation building block of Dapr, to synchronously communicate between services in the DaprHospital application.
 
