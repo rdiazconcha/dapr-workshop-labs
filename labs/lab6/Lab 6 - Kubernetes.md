@@ -27,7 +27,7 @@ To finish lab, you will need the following software:
     --node-vm-size Standard_D2s_v3 
     --vm-set-type VirtualMachineScaleSets 
     --enable-addons monitoring
-    --generate--ssh-keys
+    --generate-ssh-keys
     ```
 2. Verify the status by executing the following command:
     ```bash

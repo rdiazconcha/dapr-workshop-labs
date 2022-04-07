@@ -42,14 +42,14 @@ In addition, you will deploy DaprHospital in an Azure Kubernetes Service (AKS) c
 
 ## Software prerequisites
 - Windows 10 2004 or above
-- Visual Studio 2019 16.11 or above
-- Visual Studio Code 1.60 or above
-- Docker Desktop for Windows 4.0.0 or above
+- Visual Studio 2022 17.0 or above
+- Visual Studio Code 1.66 or above
+- .NET 6.0 SDK
+- Docker Desktop for Windows 20.10.11 or above
 - Local SQL Server engine (SQL Server or SQL Server Express)
 - SQL Server Management Studio or Azure Data Studio
 - Windows Terminal or PowerShell
 - Git 2.33 or above
-- .NET 5.0 SDK
 - Postman
 - Azure CLI 2.28 or above
 - Helm 3.6.3 or above

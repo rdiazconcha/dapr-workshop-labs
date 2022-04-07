@@ -1,6 +1,6 @@
 # Lab 1 - Setting up the development environment
 
-In this lab, you will set up your development environment for use in the rest of the labs of this workshop.
+In this lab, you will set up your development environment that you will use on this workshop.
  
 Duration: 20 minutes
 
@@ -12,9 +12,16 @@ Duration: 20 minutes
     ```
 
 2. Verify the installation by executing `dapr --version`
+    
+    ---
+    **NOTE**
+
+    Dapr latest stable version is 1.6.0
+
+    ---
 
 ## Task 2: Initialize Dapr
-1. Ensure that Docker is up and running.  Otherwise, you will receive the following error:
+1. Ensure that Docker is up and running, and set to Linux containers mode.  Otherwise, you will receive the following error:
 
     >     Making the jump to hyperspace... could not connect to Docker. Docker may not be installed or running
 
@@ -22,7 +29,7 @@ Duration: 20 minutes
 
     `dapr init`
     
-3. Dapr will start downloading the default Docker images for the Pub/Sub, State, and Observability building blocks.  Those Docker containers will be used as sidecar for your own microservices.
+3. Dapr will start downloading the default Docker images for the Pub/Sub, State, and Observability building blocks.  Those Docker containers will be used as a sidecar for your own microservices.
 ![](images/daprinit.PNG)
 
 4. Once finished, inspect your `$HOME\.dapr` folder
@@ -54,7 +61,7 @@ Duration: 20 minutes
 5. Build the solution to restore the NuGet packages and ensure that it compiles without issues.a
 
 ## Task 5: Set the connection strings
-1. Add a connection string in the appsettings.json files of the Person, Patient, and Hospital microservices.  The connection string name should be the short name of its respective microservice.  The following code snippet shows the connection string for the Person microservice, as used in a local SQL Server express instance:
+1. Add a connection string in the appsettings.json files of the Person, Patient, and Hospital microservices.  The connection string name should be the short name of its respective microservice.  The following code snippet shows the connection string for the Person microservice, as used in a local SQL Server Express instance:
 
     ```json
     "ConnectionStrings": {
@@ -84,11 +91,11 @@ Duration: 20 minutes
 ## Task 7: Install Tye
 1. Execute the following command:
 
-    `dotnet tool install --global Microsoft.Tye --version 0.9.0-alpha.21380.1`
+    `dotnet tool install --global Microsoft.Tye --version 0.10.0-alpha.21420.1`
     
 2. Verify by executing the following command:
 
-    `dotnet tool list`
+    `dotnet tool list --global`
 
 ## Task 8: Run with Tye
 Tye allows you to run a microservices solution easily.  With its Dapr integration, you can quickly run all the microservices and their Dapr sidecars.

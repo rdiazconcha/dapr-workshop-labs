@@ -12,17 +12,24 @@ In this lab, you will use the input and output binding building blocks for recei
 1. Copy both azure-queue-input-binding.yaml and azure-queue-output-binding.yaml files located in the src\components folder, to the components folder of your .dapr directory ($HOME\\.dapr\components).
 
 2. Modify the azure-queue-input-binding.yaml file:
+   
     a. Set the storageAccount name to the name that you chose.
+
     b. Set the storageAccessKey to the value that you copied to the notepad.
+
     c. Queue name should be left as "peoplequeue".
     
 3. Modify the azure-queue-output-binding.yaml file:
+   
     a. Set the storageAccount name to the name that you chose.
+
     b. Set the storageAccessKey to the value that you copied to the notepad.
+
     c. Queue name should be left as "proceduresqueue".
     
 ## Task 3: Modify the Person microservice
 1. In the PersonController class:
+   
     a. Implement a new method named GetCommandFromRequestAsync() that converts the request body from a Base64 string to a CreatePersonCommand object.
     
     b. Implement a new method named OnInputBinding().  Decorate it with the [HttpPost("/azurequeueinput")] attribute.  Invoke the GetCommandFromRequestAsync() method to get the deserialized command.
@@ -49,11 +56,14 @@ In this lab, you will use the input and output binding building blocks for recei
 
 ## Task 4: Modify the Hospital microservice
 1. In the HospitalController class:
+
     a. Inject a DaprClient object in the constructor.
+
     b. Implement a new method named AddProcedure() that takes an AddProcedureCommand object, and performs the following:
         - Add a new procedure to the Inpatient.
         - Save the changes to the database by using the DbContext.
         - Invoke the "azurequeueoutput" binding by using the DaprClient object instance that was injected in the constructor.
+  
         ```csharp
         [ApiController]
         [Route("[controller]")]

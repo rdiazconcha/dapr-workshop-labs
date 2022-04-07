@@ -10,8 +10,10 @@ In this lab, you will use the Pub/Sub building block of Dapr to send and receive
 
 3. In the PersonController class:
 
-    a. Inject `DaprClient` in the constructor and store it in a `daprClient` field
+    a. Inject `DaprClient` in the constructor and store it in a `daprClient` field.
+
     b. Implement the CreatePersonAndPublishEventAsync() method as follows:
+
         ```csharp
         private async Task<Domain.Entities.Person> CreatePersonAndPublishEventAsync(CreatePersonCommand command)
         {
@@ -27,6 +29,7 @@ In this lab, you will use the Pub/Sub building block of Dapr to send and receive
         }
         ```
     c. Implement the Post() method as follows:
+
         ```csharp
         [HttpPost]
         public async Task<IActionResult> Post(CreatePersonCommand command)
@@ -41,18 +44,25 @@ In this lab, you will use the Pub/Sub building block of Dapr to send and receive
 1. Add a reference to the `Dapr.AspNetCore` NuGet package.
 
 2. In the Startup class:
+   
     a. Chain the `AddDapr()` call after `AddControllers()`.
     
     b. Invoke `app.UseCloudEvents()` before `app.UseEndpoints()`
     
-    c. Invoke `endpoints.MapSubscribeHandler()` before `endpoints.MapControllers()`
+    c. Invoke `app.MapSubscribeHandler()` before `endpoints.MapControllers()`
     
 3. Add a new IntegrationEventsController class:
+   
     a. Create the IntegrationEventsController.cs class inside the Controllers folder
+
     b. Inject ILogger<IntegrationEventsController>
+    
     c. Inject PatientDbContext
+    
     d. Implement the OnPersonCreated() method.  Decorate it with the [Topic] attribute
-    e. Use the “person-topic” topic
+    
+    e. Use the “person-topic” topic:
+
         ```csharp
            [ApiController]
            [Route("[controller]")]
@@ -79,8 +89,11 @@ In this lab, you will use the Pub/Sub building block of Dapr to send and receive
            }
         ```
 4. In the PatientController class:
+   
     a. Inject DaprClient
+    
     b. Implement the AdmitPatient(), DischargePatient(), and SetBloodType() methods
+
         ```csharp
            [ApiController]
            [Route("[controller]")]
