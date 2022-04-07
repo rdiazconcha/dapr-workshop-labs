@@ -2,7 +2,7 @@
 
 ![](images/DaprHospital-logo.png)
 
-In order to take the most out of this workshop, you should be familiar with .NET and the C# programming language.  Though no previous experience with microservices is assumed, you should be familiar with building and deploying server-based applications.
+In order to get the most out of this workshop, you should be familiar with .NET and the C# programming language.  Though no previous experience with microservices is assumed, you should be familiar with building and deploying server-based applications.
 
 ## Scenario
 In this series of labs, you will implement Dapr and some of its building blocks on DaprHospital: a fictitious hospital system that includes the following microservices:
